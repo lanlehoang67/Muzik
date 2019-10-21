@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import routes from './routes'
 render(
     <Provider store={store}>
-        <Router routes={routes}></Router>
+        <Router>{routes}</Router>
     </Provider>,
     document.getElementById('root')
 )
