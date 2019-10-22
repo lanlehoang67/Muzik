@@ -11,16 +11,21 @@ export function fetchTracks() {
         })
         dispatch(startFading())
 
-        axios.get('https://zingmp3.vn/album/Top-100-Pop-Au-My-Hay-Nhat-Various-Artists/ZWZB96AB.html')
+        axios.get('https://zingmp3.vn/album/Top-100-Pop-Au-My-Hay-Nhat-Various-Artists/ZWZB96AB.html', )
             .then(({
                 data
             }) => {
                 console.log(data)
-                dispatch({type: types.FETCH_TRACK_SUCCESS, tracks: data.data.items})
+                dispatch({
+                    type: types.FETCH_TRACK_SUCCESS,
+                    tracks: data.data.items
+                })
                 dispatch(stopFading)
             })
-            .catch(()=>{
-                dispatch({type: types.FETCH_TRACK_FAILURE})
+            .catch(() => {
+                dispatch({
+                    type: types.FETCH_TRACK_FAILURE
+                })
                 dispatch(stopFading)
             })
     }

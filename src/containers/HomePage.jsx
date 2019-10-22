@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import Home from '../components/Home/Home'
 import {fetchTracks} from '../actions/home'
+import store from '../store'
 class HomePage extends Component {
     render() {
         return (
@@ -17,4 +18,5 @@ function mapStateToProps(state){
         tracks
     }
 }
+
 export default connect(mapStateToProps, {fetchTracks})(HomePage);
