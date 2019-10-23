@@ -1,0 +1,54 @@
+.main {
+        position: relative;
+    display: block;
+        margin: 50px;
+        width: 800px;
+        border: solid 1px;
+        border-radius: 10px;
+        box-shadow: 3px 3px #888888;
+}
+.item-image {
+    display: inline-block;
+    width: 125px;
+    height: 125px;
+    border: none;
+    border-radius: 10px;
+}
+.item-image:hover + .play{
+    display: block;
+}
+.play:hover {
+    display: block;
+}
+.item-image:hover{
+    opacity: 0.5;
+    transition: opacity .15s ease-in-out;
+}
+.item-title{
+    
+    display: block;
+    color: #888888;
+    font-weight: 700;
+}
+.item-artist{
+    display: block;
+    color: rgb(125, 217, 245);
+    font-weight: 400;
+}
+.item-description{
+    display: inline-block;
+    margin-left: 20px;
+}
+.play{
+    display: none;
+    position: absolute;
+    left: 58px;
+    top: 54px;
+    color: white;
+}
+.icon-section{
+    position: absolute;
+}
+.icon-section > i{
+    margin-right: 10px;
+}

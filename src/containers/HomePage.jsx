@@ -11,7 +11,6 @@ class HomePage extends Component {
         return (
             <>
             <Home {...this.props}></Home>
-            <button onClick={this.props.fetchTracks}>Button</button>
             </>
         )
     }
