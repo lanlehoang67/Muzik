@@ -4,9 +4,15 @@ import Home from '../components/Home/Home'
 import {fetchTracks} from '../actions/home'
 import store from '../store'
 class HomePage extends Component {
+    componentDidMount(){
+        this.props.fetchTracks()
+    }
     render() {
         return (
+            <>
             <Home {...this.props}></Home>
+            <button onClick={this.props.fetchTracks}>Button</button>
+            </>
         )
     }
 }

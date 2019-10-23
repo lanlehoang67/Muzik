@@ -6,8 +6,8 @@ class TrackList extends Component {
             <div className="track-list">
                 <ul>
                 {
-                    this.props.tracks.map(track=>{
-                       return <Track {...track} {...this.props}></Track>
+                    this.props.tracks.map((track,i)=>{
+                       return <Track {...track} {...this.props} key={i}></Track>
                     })
                 }
                 </ul>

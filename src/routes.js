@@ -4,6 +4,6 @@ import * as Containers from './containers'
 import fetchOnScroll from './HOC/fetchOnScroll'
 export default (
     <Switch>
-        <Route path="/" component={fetchOnScroll(Containers.App)}></Route>
+        <Route path="/" component={Containers.App}></Route>
     </Switch>
 )

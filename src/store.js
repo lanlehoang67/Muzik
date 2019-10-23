@@ -4,13 +4,11 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import _throttle from 'lodash.throttle';
-import rootReducer from './reducers';
-
-
+import rootReducer from './reducers/index';
 let middleware = [thunk];
 // apply logger middleware in the development environment
-const store = createStore(rootReducer, [], applyMiddleware(...middleware));
-
+const store = createStore(rootReducer, applyMiddleware(...middleware));
+store.subscribe(()=>console.log(store.getState()))
 export default store;
 
 

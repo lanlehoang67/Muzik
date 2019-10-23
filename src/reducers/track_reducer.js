@@ -5,12 +5,14 @@ const initialState = {
     isLoading: false
 }
 export default function (state = initialState, action) {
-    switch (action.types) {
+    switch (action.type) {
         case types.START_FETCHING_TRACKS:
+            console.log('start')
             return {
                 ...state, isLoading: true
             };
         case types.FETCH_TRACK_SUCCESS:
+            console.log('true reducer')
             return fetchTrackSuccess(state, action);
         case types.FETCH_TRACK_FAILURE:
             return {
@@ -27,9 +29,10 @@ function compareTwoTrack(track1, track2) {
 
 function fetchTrackSuccess(state, action) {
     let tracks = state.tracks;
-    if (state.tracks.length > 0 && compareTwoTrack(state.tracks[0], action.tracks[0])) {
-        tracks = tracks.concat(action.tracks)
+    if (tracks.length >0 && !compareTwoTrack(state.tracks[0], action.tracks[0])) {
+        tracks = [...tracks, action.tracks]
     }
+    else tracks = action.tracks;
     return {
         ...state,
         tracks,
