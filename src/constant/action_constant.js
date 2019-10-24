@@ -58,9 +58,9 @@ export const TOGGLE_PUSH_ROUTE = 'TOGGLE_PUSH_ROUTE';
 
 
 // action for chart
-export const FETCH_POP_CHART = 'FETCH_POP_CHART';
-export const FETCH_KPOP_CHART = 'FETCH_KPOP_CHART';
 export const FETCH_VPOP_CHART = 'FETCH_VPOP_CHART';
+export const FETCH_JPOP_CHART = 'FETCH_JPOP_CHART';
+export const FETCH_CPOP_CHART = 'FETCH_CPOP_CHART';
 export const CHANGE_ACTIVE_CHART = 'CHANGE_ACTIVE_CHART';
 
 // action for authentication

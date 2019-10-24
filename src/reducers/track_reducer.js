@@ -7,12 +7,10 @@ const initialState = {
 export default function (state = initialState, action) {
     switch (action.type) {
         case types.START_FETCHING_TRACKS:
-            console.log('start')
             return {
                 ...state, isLoading: true
             };
         case types.FETCH_TRACK_SUCCESS:
-            console.log('true reducer')
             return fetchTrackSuccess(state, action);
         case types.FETCH_TRACK_FAILURE:
             return {

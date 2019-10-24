@@ -1,0 +1,21 @@
+.chart {
+    display: flex;
+    position: absolute;
+    right: 250px;
+    top: 150px;
+    box-sizing: border-box;
+    border: solid 1px;
+    width: 300px;
+    text-align: center;
+}
+
+.chart-page{
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}

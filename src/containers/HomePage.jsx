@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Home from '../components/Home/Home'
 import {fetchTracks} from '../actions/home'
 import store from '../store'
+
 class HomePage extends Component {
     componentDidMount(){
         this.props.fetchTracks()

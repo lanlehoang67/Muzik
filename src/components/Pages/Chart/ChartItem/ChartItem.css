@@ -1,0 +1,23 @@
+.chart-item-thumb >img{
+    width: 50px;
+    height: 50px;
+}
+ul{
+    list-style-type: none;
+}
+.chart-item{
+    display: block;
+    width: 100%;
+    border:  1px ;
+}
+.chart-item-thumb{
+    display: inline-block;
+}
+.chart-item-detail{
+    display: inline-block;
+    margin-left: 20px;
+    
+}
+a{
+    color: black;
+}

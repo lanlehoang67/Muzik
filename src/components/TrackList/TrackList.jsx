@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
 import Track from './Track/Track'
-
-const styles = {
-    title: {
-        textTransform: 'uppercase',
-        fontWeight: 700,
-        color: 'rgb(56, 225, 234)',
+import {Typography} from '@material-ui/core'
+import {withStyles} from '@material-ui/styles'
+const styles = theme => ({
+    root: {
         margin: '50px'
     }
-}
+})
 
 class TrackList extends Component {
     render() {
+        const {classes} = this.props;
         return (
             <>
-            <h4 style={styles.title}>Music lists</h4>
+            <Typography className={classes.root} variant="h4" component="h2">
+            Music List
+            </Typography>
             <div className="track-list" >
                 
                 {
@@ -28,4 +29,4 @@ class TrackList extends Component {
         )
     }
 }
-export default TrackList;
+export default withStyles(styles)(TrackList);

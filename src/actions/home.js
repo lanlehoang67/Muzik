@@ -15,7 +15,6 @@ export function fetchTracks() {
             .then(
                 data =>
               {
-                console.log(data.data)
                 dispatch({
                     type: types.FETCH_TRACK_SUCCESS,
                     tracks: data.data
