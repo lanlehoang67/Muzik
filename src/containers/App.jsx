@@ -1,35 +1,25 @@
 import React, { Component } from 'react'
 import Menu from '../components/Menu/Menu'
 import HomePage from './HomePage'
-import ReactJkMusicPlayer from "react-jinke-music-player";
-import "react-jinke-music-player/assets/index.css";
+
 import {connect} from 'react-redux'
-const options =  {
 
-  audioLists: [
-    
-  ],
-    mode: 'full',
-    theme: 'light',
-    autoPlay: false,
-    showMiniModeCover: false,
-
-}
 class App extends Component {
     render() {
         console.log(this.props.tracks)
-       
+        if(this.props.tracks.length >0){
+        }
         return (
           <>
             <Menu></Menu>
             <HomePage></HomePage>
-            <ReactJkMusicPlayer className="light-theme" {...options} ></ReactJkMusicPlayer>
+            
             </>
         )
     }
 }
 function mapStateToProps(state){
-    const {tracks} = state;
+    const {tracks} = state.trackState;
     return {
         tracks
     }

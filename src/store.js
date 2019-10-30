@@ -5,7 +5,11 @@ import {
 import thunk from 'redux-thunk';
 import _throttle from 'lodash.throttle';
 import rootReducer from './reducers/index';
-let middleware = [thunk];
+import { loadingBarMiddleware } from 'react-redux-loading-bar'
+
+let middleware = [thunk, loadingBarMiddleware({
+    scope: 'sectionBar',
+  })];
 // apply logger middleware in the development environment
 const store = createStore(rootReducer, applyMiddleware(...middleware));
 store.subscribe(()=>console.log(store.getState()))

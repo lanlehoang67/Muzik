@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Home from '../components/Home/Home'
 import {fetchTracks} from '../actions/home'
 import store from '../store'
-
+import { addSongToQueue } from '../actions/queue'
 class HomePage extends Component {
     componentDidMount(){
         this.props.fetchTracks()
@@ -19,10 +19,12 @@ class HomePage extends Component {
 
 function mapStateToProps(state){
     const {isLoading, tracks} = state.trackState;
+    const {queue}= state.queueState;
     return {
         isLoading,
-        tracks
+        tracks,
+        queue
     }
 }
 
-export default connect(mapStateToProps, {fetchTracks})(HomePage);
+export default connect(mapStateToProps, {fetchTracks, addSongToQueue})(HomePage);

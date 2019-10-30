@@ -2,7 +2,7 @@ import * as types from '../constant/action_constant'
 
 const initialState = {
     tracks: [],
-    isLoading: false
+    isLoading: false,
 }
 export default function (state = initialState, action) {
     switch (action.type) {

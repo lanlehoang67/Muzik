@@ -4,6 +4,8 @@ import Pages from '../components/Pages/index'
 import {fetchChart, changeChart} from '../actions/chart'
 class ChartPage extends Component {
     componentDidMount(){
+        this.props.fetchChart("jpop")
+        this.props.fetchChart("cpop")
         this.props.fetchChart("vpop")
     }
     render() {

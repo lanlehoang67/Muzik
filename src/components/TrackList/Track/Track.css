@@ -26,7 +26,7 @@
 }
 .item-title{
     
-    display: block;
+    display: inline-block;
     color: #888888;
     font-weight: 700;
 }
@@ -37,6 +37,9 @@
 }
 .item-description{
     display: inline-block;
+    margin-left: 20px;
+    vertical-align: top;
+    margin-top: 15px;
     margin-left: 20px;
 }
 .play{
@@ -51,4 +54,7 @@
 }
 .icon-section > i{
     margin-right: 10px;
+}
+.main{
+    width: 50%;
 }

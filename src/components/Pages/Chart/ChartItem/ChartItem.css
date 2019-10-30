@@ -8,7 +8,8 @@ ul{
 .chart-item{
     display: block;
     width: 100%;
-    border:  1px ;
+    border:  1px ; 
+    padding: 10px 0 0;
 }
 .chart-item-thumb{
     display: inline-block;
@@ -20,4 +21,7 @@ ul{
 }
 a{
     color: black;
+}
+.MuiBox-root-149 {
+ padding: 0 !important;
 }

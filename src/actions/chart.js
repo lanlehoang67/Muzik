@@ -13,14 +13,12 @@ export function fetchChart(typeOfChart){
               .then(data => {
                   switch(typeOfChart){
                       case chartTypes.vpop: 
-                        dispatch({type: types.FETCH_VPOP_CHART, vpop: data.data.songs});
-                        break;
+                      console.log(data)
+                        return dispatch({type: types.FETCH_VPOP_CHART, vpop: data.data.songs});
                       case chartTypes.jpop:
-                        dispatch({type: types.FETCH_JPOP_CHART, jpop: data.data.songs})
-                        break;
+                        return dispatch({type: types.FETCH_JPOP_CHART, jpop: data.data.songs})
                       case chartTypes.cpop:
-                        dispatch({type: types.FETCH_CPOP_CHART, cpop: data.data.songs})
-                        break;
+                        return dispatch({type: types.FETCH_CPOP_CHART, cpop: data.data.songs})
                       default:
                         break;
                   }

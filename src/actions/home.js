@@ -4,12 +4,14 @@ import {
     startFading,
     stopFading
 } from '../actions/ui'
+import { showLoading, hideLoading } from 'react-redux-loading-bar'
+
 export function fetchTracks() {
     return dispatch => {
         dispatch({
             type: types.START_FETCHING_TRACKS
         })
-        dispatch(startFading())
+        dispatch(showLoading('sectionBar'))
 
         axios.get('http://127.0.0.1:3001/api/v1/songs' )
             .then(
@@ -19,13 +21,15 @@ export function fetchTracks() {
                     type: types.FETCH_TRACK_SUCCESS,
                     tracks: data.data
                 })
-                dispatch(stopFading())
+                dispatch(hideLoading('sectionBar'))
+
             })
             .catch(() => {
                 dispatch({
                     type: types.FETCH_TRACK_FAILURE
                 })
-                dispatch(stopFading())
+                dispatch(hideLoading('sectionBar'))
+
             })
     }
 }
