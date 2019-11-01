@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_061512) do
+ActiveRecord::Schema.define(version: 2019_11_01_124528) do
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "artist_id"
     t.string "name"
     t.string "picture"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["artist_id"], name: "index_albums_on_artist_id"
   end
 
@@ -118,8 +118,8 @@ ActiveRecord::Schema.define(version: 2019_10_23_061512) do
   create_table "song_genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "song_id"
     t.bigint "genre_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.index ["genre_id"], name: "index_song_genres_on_genre_id"
     t.index ["song_id"], name: "index_song_genres_on_song_id"
   end
@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_061512) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

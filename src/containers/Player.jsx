@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 
 class Player extends Component {
     render() {
+      console.log('player')
       console.log(this.props)
 
       const options =  {

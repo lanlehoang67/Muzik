@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthabl
+  has_secure_password
   has_many :user_favorites
   has_many :notifications
   has_many :play_lists
