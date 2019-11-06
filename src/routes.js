@@ -11,6 +11,8 @@ export default (
         <LoadingBar></LoadingBar>
         <Route exact path="/" component={Containers.App}></Route>
         <Route exact path="/songs/:id" component={Containers.DetailPage}></Route>
+        <Route exact path="/login" component={Containers.SignIn}></Route>
+        <Route exact path="/register" component={Containers.SignUp}></Route>
         <Player></Player>
         </Route>
     </Switch>

@@ -5,6 +5,7 @@ import HomeReducer from './home_reducer'
 import TrackReducer from './track_reducer'
 import ChartReducer from './chart_reducer'
 import QueueReducer from './queue_reducer'
+import AuthReducer from './auth_reducer'
 import { loadingBarReducer } from 'react-redux-loading-bar'
 
 export default combineReducers({
@@ -12,5 +13,6 @@ export default combineReducers({
     trackState: TrackReducer,
     chartState: ChartReducer,
     loadingBar: loadingBarReducer,
-    queueState: QueueReducer
+    queueState: QueueReducer,
+    auth: AuthReducer
 })

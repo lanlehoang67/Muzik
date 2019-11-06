@@ -1,4 +1,4 @@
-* {
-    background-color: rgb(135, 135, 135);
-
+ .main-root{
+    background: url('../../assets/images/background/bg2.jpg');
+    display: flow-root;
 }
