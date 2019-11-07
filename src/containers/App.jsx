@@ -11,7 +11,7 @@ class App extends Component {
         }
         return (
           <>
-            <Menu></Menu>
+            <Menu {...this.props}></Menu>
             <HomePage></HomePage>
             
             </>
@@ -20,8 +20,10 @@ class App extends Component {
 }
 function mapStateToProps(state){
     const {tracks} = state.trackState;
+    const {authenticated} = state.auth;
     return {
-        tracks
+        tracks,
+        authenticated
     }
 }
 export default connect(mapStateToProps)(App);

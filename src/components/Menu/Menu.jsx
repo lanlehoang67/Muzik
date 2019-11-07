@@ -7,8 +7,10 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-
-const useStyles = makeStyles(theme => ({
+import Button from '@material-ui/core/Button'
+import { withStyles } from '@material-ui/core/styles'
+import {logout} from '../../actions/auth'
+const styles = theme => ({
   root: {
     flexGrow: 1,
   },
@@ -59,11 +61,13 @@ const useStyles = makeStyles(theme => ({
       },
     },
   },
-}));
-
-export default function Menu() {
-  const classes = useStyles();
-
+});
+class Menu extends React.Component {
+  logout = ()=>{
+    this.props.dispatch(logout());
+  }
+  render(){
+  const {classes} = this.props;
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -92,8 +96,21 @@ export default function Menu() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
+          {this.props.authenticated ?
+          <Button onClick={this.logout} color="inherit">Log out</Button>
+          :
+          <>
+          <Button onClick={()=>this.props.history.push("/register")} color="inherit">Register</Button>
+          <Button onClick={()=>this.props.history.push("/login")}color="inherit">Login</Button>
+          </>
+          }
         </Toolbar>
+        
+        
       </AppBar>
     </div>
   );
+            }
 }
+
+export default withStyles(styles)(Menu)

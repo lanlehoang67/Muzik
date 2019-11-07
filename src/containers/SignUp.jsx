@@ -47,9 +47,9 @@ const styles = theme => ({
      }
     onSubmit = e => {
         e.preventDefault();
-        console.log('sign up')
         const {email, password, password_confirmation} = this.state;
         this.props.dispatch(signup({email, password, password_confirmation}))
+        this.props.history.push('/login')
     }
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value });

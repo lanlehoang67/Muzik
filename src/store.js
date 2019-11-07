@@ -12,7 +12,7 @@ let middleware = [thunk, loadingBarMiddleware({
   })];
 // apply logger middleware in the development environment
 const store = createStore(rootReducer, applyMiddleware(...middleware));
-store.subscribe(()=>console.log(store.getState()))
+
 export default store;
 
 

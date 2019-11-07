@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {connect} from 'react-redux'
-
+import { login } from '../actions/auth'
 
 const styles = theme => ({
   '@global': {
@@ -41,9 +41,23 @@ const styles = theme => ({
 });
 
 class SignIn extends React.Component {
+  onSubmit = e => {
+    e.preventDefault();
+    const {email, password} = this.state;
+    this.props.dispatch(login({email, password}));
+  }
+  componentWillReceiveProps(nextProps){
+    if(nextProps.authenticated){
+      setTimeout(() => {
+        this.props.history.push("/")
+      }, (300));
+    }
+  }
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
   render(){
   const {classes} = this.props;
-
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -54,7 +68,7 @@ class SignIn extends React.Component {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={this.onSubmit}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -65,6 +79,7 @@ class SignIn extends React.Component {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={this.onChange}
           />
           <TextField
             variant="outlined"
@@ -76,6 +91,7 @@ class SignIn extends React.Component {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={this.onChange}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -94,7 +110,7 @@ class SignIn extends React.Component {
             <Grid item xs>
               <Link href="#" variant="body2">
                 Forgot password?
-              </Link>
+              </Link>moduleName
             </Grid>
             <Grid item>
               <Link href="#" variant="body2">

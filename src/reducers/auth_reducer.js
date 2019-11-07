@@ -11,7 +11,7 @@ export default function (state = initialState, action) {
   switch (action.type) {
   case types.SIGN_UP_SUCCESS:
   case types.LOG_IN_SUCCESS:
-    return { ...state, user: action.user, authenticated: true };
+    return { ...state, user: action.data, authenticated: true };
 
   case types.SIGN_UP_FAILURE:
   case types.LOG_IN_FAILURE:
