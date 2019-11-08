@@ -5,6 +5,7 @@ class Song < ApplicationRecord
   has_many :comments
   has_many :history_songs
   has_many :users, through: :history_songs
+  has_many :lyrics
 	belongs_to :artist
   belongs_to :user
   belongs_to :play_list, optional: true
