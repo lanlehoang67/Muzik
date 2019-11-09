@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Menu from '../components/Menu/Menu'
 import HomePage from './HomePage'
-
+import Player from './Player'
 import {connect} from 'react-redux'
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
           <>
             <Menu {...this.props}></Menu>
             <HomePage></HomePage>
-            
+            <Player></Player>
             </>
         )
     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Player from './Player'
 class DetailPage extends Component {
     render() {
         return (

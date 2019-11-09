@@ -13,7 +13,10 @@ export default (
         <Route exact path="/songs/:id" component={Containers.DetailPage}></Route>
         <Route exact path="/login" component={Containers.SignIn}></Route>
         <Route exact path="/register" component={Containers.SignUp}></Route>
-        <Player></Player>
+        
+       
+        <Route exact path="/admin" component={Containers.Admin}></Route>
         </Route>
+       
     </Switch>
 )
