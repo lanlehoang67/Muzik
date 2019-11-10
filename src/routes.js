@@ -4,7 +4,10 @@ import * as Containers from './containers'
 import fetchOnScroll from './HOC/fetchOnScroll'
 import Player from './containers/Player'
 import LoadingBar from 'react-redux-loading-bar'
-
+import RouteWithLayout from "./components/RouteWithLayout/RouteWithLayout";
+import UserList from "./components/Admin/UserList/UserList";
+import Admin from "./containers/Admin";
+import Dashboard from "./components/Admin/Dashboard/Dashboard";
 export default (
     <Switch>
         <Route>
@@ -16,6 +19,10 @@ export default (
         
        
         <Route exact path="/admin" component={Containers.Admin}></Route>
+        <RouteWithLayout component={UserList} exact layout={Admin} path="/admin/users"></RouteWithLayout>
+        {/* <RouteWithLayout component={UserList} exact layout={Admin} path="/admin/songs"></RouteWithLayout>
+        <RouteWithLayout component={UserList} exact layout={Admin} path="/admin/albums"></RouteWithLayout> */}
+        <RouteWithLayout component={Dashboard} exact layout={Admin} path="/admin/dashboard"></RouteWithLayout>
         </Route>
        
     </Switch>

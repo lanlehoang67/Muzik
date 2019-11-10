@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2019_11_08_112109) do
     t.bigint "artist_id"
     t.string "name"
     t.string "picture"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_albums_on_artist_id"
   end
 
@@ -127,8 +127,8 @@ ActiveRecord::Schema.define(version: 2019_11_08_112109) do
   create_table "song_genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "song_id"
     t.bigint "genre_id"
-    t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-    t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["genre_id"], name: "index_song_genres_on_genre_id"
     t.index ["song_id"], name: "index_song_genres_on_song_id"
   end
