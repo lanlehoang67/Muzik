@@ -116,7 +116,6 @@ const UsersTable = props => {
                   <TableCell>Name</TableCell>
                   <TableCell>Email</TableCell>
                   <TableCell>Location</TableCell>
-                  <TableCell>Phone</TableCell>
                   <TableCell>Registration date</TableCell>
                 </TableRow>
               </TableHead>
@@ -138,21 +137,14 @@ const UsersTable = props => {
                     </TableCell>
                     <TableCell>
                       <div className={classes.nameContainer}>
-                        <Avatar
-                          className={classes.avatar}
-                          src={user.avatarUrl}
-                        >
-                         
-                        </Avatar>
-                        <Typography variant="body1">{user.name}</Typography>
+                     
+                        <Typography variant="body1">{user.full_name}</Typography>
                       </div>
                     </TableCell>
                     <TableCell>{user.email}</TableCell>
                     <TableCell>
-                      {user.address.city}, {user.address.state},{' '}
-                      {user.address.country}
+                      {user.address}
                     </TableCell>
-                    <TableCell>{user.phone}</TableCell>
                     <TableCell>
                       {moment(user.createdAt).format('DD/MM/YYYY')}
                     </TableCell>
