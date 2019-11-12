@@ -80,7 +80,7 @@ function Admin(props) {
             <ListItemIcon><MusicIcon /></ListItemIcon>
             <ListItemText primary="Songs" />
           </ListItem>
-          <ListItem button key="Albums">
+          <ListItem button key="Albums" onClick={()=>history.push("/admin/albums")}>
             <ListItemIcon><AlbumIcon /></ListItemIcon>
             <ListItemText primary="Albums" />
           </ListItem>

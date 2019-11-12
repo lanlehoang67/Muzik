@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   	namespace :v1 do 
       resources :songs, except: :show
       resources :users
+      resources :albums
       get "/songs/:title/:id", to: "songs#show"
       get "/genres/:title/songs", to: "genres#show"
       post 'authenticate', to: 'authentication#authenticate'

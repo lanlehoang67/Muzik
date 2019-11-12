@@ -7,6 +7,7 @@ import ChartReducer from './chart_reducer'
 import QueueReducer from './queue_reducer'
 import AuthReducer from './auth_reducer'
 import UserReducer from './user_reducer'
+import AlbumReducer from './album_reducer'
 import { loadingBarReducer } from 'react-redux-loading-bar'
 
 export default combineReducers({
@@ -16,5 +17,6 @@ export default combineReducers({
     loadingBar: loadingBarReducer,
     queueState: QueueReducer,
     userState: UserReducer,
+    albumState: AlbumReducer,
     auth: AuthReducer
 })
