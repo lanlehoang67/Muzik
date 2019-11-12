@@ -22,3 +22,19 @@ export function fetchSong(title, id){
             })
     }
 }
+export default function getSongs(){
+    return dispatch => {
+        dispatch({type: types.START_GET_SONGS});
+        axios.get("http://127.0.0.1:3001/api/v1/songs")
+            .then(data=>{
+                console.log(data)
+                dispatch({type: types.GET_SONGS_SUCCESS, songs: data.data});
+                dispatch({type: types.FINISH_GET_SONGS});
+            })
+            .catch(err=>{
+                console.log(err)
+                dispatch({type: types.GET_SONGS_FAILURE, errors: err.response.data.errors})
+                dispatch({type: types.FINISH_GET_SONGS});
+            })
+    }
+}

@@ -76,7 +76,7 @@ function Admin(props) {
             <ListItemText primary="Dashboard" />
             
           </ListItem>
-          <ListItem button key="Songs">
+          <ListItem button key="Songs" onClick={()=>history.push("/admin/songs")}>
             <ListItemIcon><MusicIcon /></ListItemIcon>
             <ListItemText primary="Songs" />
           </ListItem>

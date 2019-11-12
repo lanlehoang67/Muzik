@@ -17,3 +17,15 @@ export default function getUsers(){
             })
     }
 }
+function addUser(){
+    return dispatch => {
+        axios.post("http://127.0.0.1:3001/api/v1/users")
+        .then(data=>{
+            console.log(data)
+        })
+        .catch(err=>{
+            console.log(err)
+            
+        })
+    }
+}
