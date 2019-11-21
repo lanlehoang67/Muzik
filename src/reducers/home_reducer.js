@@ -2,7 +2,9 @@
 import * as types from '../constant/action_constant'
 
 const initialState = {
-    isLoading: false
+    isLoading: false,
+    isSearching: false,
+    songs: []
 }
 
 export default function (state = initialState, action){
@@ -11,6 +13,10 @@ export default function (state = initialState, action){
             return {...state, isLoading: true}
         case types.FINISH_LOADING:
             return {...state, isLoading: false}
+        case types.START_SEARCHING:
+            return {...state, isSearching: true}
+        case types.FINISH_SEARCHING:
+            return {...state, songs: action.songs}
         default: 
             return state;
     }

@@ -33,3 +33,23 @@ export function fetchTracks() {
             })
     }
 }
+export function search(value){
+    return dispatch => {
+        var data = {q: value}
+        dispatch({type: types.START_SEARCHING})
+        axios.post('http://127.0.0.1:3001/api/v1/songs/search', data)
+            .then(data => {
+                dispatch({
+                    type: types.FINISH_SEARCHING,
+                    songs: data.data
+                })
+            })
+            .catch(err=> {
+                dispatch({
+                    type: types.SEARCH_NOT_FOUND,
+                    errors: err
+                })
+            })
+            
+    }
+}

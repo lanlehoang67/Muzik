@@ -20,10 +20,13 @@ class HomePage extends Component {
 function mapStateToProps(state){
     const {isLoading, tracks} = state.trackState;
     const {queue}= state.queueState;
+    const {isSearching, songs} = state.homeState;
     return {
         isLoading,
         tracks,
-        queue
+        queue,
+        isSearching,
+        songs
     }
 }
 

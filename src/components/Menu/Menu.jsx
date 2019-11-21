@@ -10,6 +10,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button'
 import { withStyles } from '@material-ui/core/styles'
 import {logout} from '../../actions/auth'
+import { search } from '../../actions/home'
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -66,6 +67,9 @@ class Menu extends React.Component {
   logout = ()=>{
     this.props.dispatch(logout());
   }
+  search = event => {
+    this.props.dispatch(search(event.target.value));
+  }
   render(){
   const {classes} = this.props;
   return (
@@ -88,6 +92,7 @@ class Menu extends React.Component {
               <SearchIcon />
             </div>
             <InputBase
+              onChange={this.search}
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,

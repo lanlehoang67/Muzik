@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get "/songs/:title/:id", to: "songs#show"
       get "/genres/:title/songs", to: "genres#show"
       post 'authenticate', to: 'authentication#authenticate'
+      post "/songs/search", to: "songs#search"
   	end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

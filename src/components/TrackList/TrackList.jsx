@@ -11,6 +11,7 @@ const styles = theme => ({
 class TrackList extends Component {
     render() {
         const {classes} = this.props;
+        console.log(this.props)
         return (
             <>
             <Typography className={classes.root} variant="h4" component="h2">
@@ -19,6 +20,11 @@ class TrackList extends Component {
             <div className="track-list" >
                 
                 {
+                    this.props.isSearching && this.props.songs != undefined ?
+                    this.props.songs.map((track,i)=>{
+                        return <Track {...track} {...this.props} key={i}></Track>
+                     })
+                     :
                     this.props.tracks.map((track,i)=>{
                        return <Track {...track} {...this.props} key={i}></Track>
                     })
