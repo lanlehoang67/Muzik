@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
-
+import { withRouter } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -44,6 +44,7 @@ const SongsToolbar = props => {
         <Button
           color="primary"
           variant="contained"
+          onClick={props.history.push("/admin/songs/new")}
         >
           Add song
         </Button>
@@ -59,4 +60,4 @@ SongsToolbar.propTypes = {
   className: PropTypes.string
 };
 
-export default SongsToolbar;
+export default withRouter(SongsToolbar);

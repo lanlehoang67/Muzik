@@ -18,7 +18,7 @@ class Player extends Component {
       
       }
         return (
-            <ReactJkMusicPlayer className="light-theme" {...options} ></ReactJkMusicPlayer>
+            <ReactJkMusicPlayer className="dark-theme" {...options} ></ReactJkMusicPlayer>
 
         )
     }

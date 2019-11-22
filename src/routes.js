@@ -10,6 +10,7 @@ import Admin from "./containers/Admin";
 import Dashboard from "./components/Admin/Dashboard/Dashboard";
 import SongList from './components/Admin/SongList'
 import AlbumList from './components/Admin/AlbumList'
+import SongForm from './components/Admin/SongForm/SongForm'
 export default (
     <Switch>
         <Route>
@@ -23,6 +24,8 @@ export default (
         <Route exact path="/admin" component={Containers.Admin}></Route>
         <RouteWithLayout component={UserList} exact layout={Admin} path="/admin/users"></RouteWithLayout>
        <RouteWithLayout component={SongList} exact layout={Admin} path="/admin/songs"></RouteWithLayout>
+       <RouteWithLayout component={SongList} exact layout={Admin} path="/admin/songs"></RouteWithLayout>
+       <RouteWithLayout component={SongForm} exact layout={Admin} path="/admin/songs/new"></RouteWithLayout>
       <RouteWithLayout component={AlbumList} exact layout={Admin} path="/admin/albums"></RouteWithLayout>
         <RouteWithLayout component={Dashboard} exact layout={Admin} path="/admin/dashboard"></RouteWithLayout>
         </Route>
