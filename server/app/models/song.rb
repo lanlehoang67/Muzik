@@ -13,7 +13,7 @@ class Song < ApplicationRecord
   delegate :name, to: :artist, prefix: true
   scope :feature, -> {where("songs.featured=true").limit(12)}
   scope :top, ->{where("songs.approved=true").order(views: :desc).limit(8)}
-  scope :recent, ->{where("songs.approved=true").order(created_at: :desc).limit(8)}
+  scope :recent, ->{order(created_at: :desc)}
   scope :find_by_genre, ->(genre_to_find){joins(:genres).where("genres.title = ? and songs.approved=true",genre_to_find) }
   scope :find_by_country, ->(country_to_find){where("songs.country = ? and songs.approved=true",country_to_find)}
   scope :trending, ->{where("songs.approved=true").order(views: :desc).limit(10)}

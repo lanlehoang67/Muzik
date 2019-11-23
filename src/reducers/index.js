@@ -8,6 +8,7 @@ import QueueReducer from './queue_reducer'
 import AuthReducer from './auth_reducer'
 import UserReducer from './user_reducer'
 import AlbumReducer from './album_reducer'
+import SongReducer from './song_reducer'
 import { loadingBarReducer } from 'react-redux-loading-bar'
 
 export default combineReducers({
@@ -18,5 +19,6 @@ export default combineReducers({
     queueState: QueueReducer,
     userState: UserReducer,
     albumState: AlbumReducer,
+    songState: SongReducer,
     auth: AuthReducer
 })

@@ -3,7 +3,7 @@ class Api::V1::SongsController < ApplicationController
 
   # GET /songs
   def index
-    @songs = Song.all
+    @songs = Song.recent
 
     render json: @songs
   end
@@ -18,7 +18,7 @@ class Api::V1::SongsController < ApplicationController
     @song = Song.new(song_params)
 
     if @song.save
-      render json: @song, status: :created, location: @song
+      render json: @song
     else
       render json: @song.errors, status: :unprocessable_entity
     end

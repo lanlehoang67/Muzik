@@ -44,7 +44,7 @@ const SongsToolbar = props => {
         <Button
           color="primary"
           variant="contained"
-          onClick={props.history.push("/admin/songs/new")}
+          onClick={() => props.history.push("/admin/songs/new")}
         >
           Add song
         </Button>
